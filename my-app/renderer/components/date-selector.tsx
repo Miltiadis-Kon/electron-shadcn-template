@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 
 import { cn } from "../lib/utils"
-import { toast } from "@/renderer/components/hooks/use-toast"
 import { Button } from "@/renderer/components//ui/button"
 import { Calendar } from "@/renderer/components/ui/calendar"
 import {
@@ -38,14 +37,7 @@ export function CalendarForm() {
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    })
+    console.log(data)
   }
 
   return (
@@ -76,7 +68,7 @@ export function CalendarForm() {
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="w-auto p-0 bg-white" align="start">
                   <Calendar
                     mode="single"
                     selected={field.value}

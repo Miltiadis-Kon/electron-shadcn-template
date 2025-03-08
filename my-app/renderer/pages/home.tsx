@@ -2,10 +2,12 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from '../components/ui/button'
-import { CardWithForm } from '../components/schedule-card'
-import { XMLInput } from '../components/xml-input'
-import { DatePicker } from '../components/date-selector'
+import { Button } from '@/renderer/components/ui/button'
+import { CardWithForm } from "@/renderer/components/schedule-card"
+import { XMLInput } from '@/renderer/components/xml-input'
+import { CalendarForm } from '@/renderer/components/date-selector'
+
+
 
 export default function HomePage() {
   const [selectedFile, setSelectedFile] = React.useState<string>("")
@@ -19,7 +21,7 @@ export default function HomePage() {
           <h1 className="text-2xl font-semibold">Deal Scheduling</h1>
           <h2 className="text-2xl font-semibold">1. Select date and xml file</h2>
             <div className="grid auto-rows-min gap-2 md:grid-cols-3">
-            <DatePicker />
+            <CalendarForm />
             <XMLInput onFileSelect={setSelectedFile}/>
               {/* RUN PYTHON SCRIPT TO GET MATCHING RESULTS FROM OUTLOOK */}
               </div>
