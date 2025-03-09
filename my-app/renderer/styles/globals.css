@@ -1,7 +1,4 @@
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @plugin 'tailwindcss-animate';
 
@@ -117,22 +114,9 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@layer components {
-  .border-border {
-    border-color: var(--border);
-  }
-}
-@layer utilities {
-  .bg-background {
-    background-color: var(--background);
-  }
-  .text-foreground {
-    color: var(--foreground);
-  }
-}
 @layer base {
   * {
-    @apply border-border ring-opacity-50;
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
