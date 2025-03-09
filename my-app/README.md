@@ -25,6 +25,17 @@ $ yarn (or `npm install`)
 $ pnpm install --shamefully-hoist
 ```
 
+### IMPORTANT NOTE
+Everhthing shadcn related is located under the /renderer folder.
+
+Update all copy-pasted imports from :
+```import {<component>} from  @/components/ui/<component>"
+```
+to 
+```
+import {<component>} from  @/renderer/components/ui/<component>"
+```
+
 ### Use it
 
 ```
